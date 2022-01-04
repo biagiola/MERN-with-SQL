@@ -1,0 +1,876 @@
+{
+	"info": {
+		"_postman_id": "3864412e-5825-4078-af2e-9b7164b5c7cd",
+		"name": "ddi-control",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "tables",
+					"item": [
+						{
+							"name": "\"tbl_users\" - Crear",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/createTblUsers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"createTblUsers"
+									]
+								},
+								"description": "tbl_users depende de tbl_role_user"
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_users\" - Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/deleteTblUsers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"deleteTblUsers"
+									]
+								},
+								"description": "tbl_users depende de tbl_role_user"
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_users\" - Vaciar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/deleteAllUsers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"deleteAllUsers"
+									]
+								},
+								"description": "para ello debe existir tbl_role_user"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Añadir Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Carlos\",\n    \"lastname\": \"García\",\n    \"email\": \"carlos7@gmail.com\",\n    \"password\": \"certina123\",\n    \"role_id\": 0,\n    \"permission_id\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loguear Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"carlos5@gmail.com\",\n    \"password\": \"certina123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"carlos5@gmail.com\",\n    \"role_id\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\": {\n        \"email\": \"carlos5@gmail.com\",\n        \"role_id\": 0\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Jorge\",\n    \"lastname\": \"Fernandez\",\n    \"email\": \"jorgefernandez1@gmail.com\",\n    \"password\": \"certina123\",\n    \"role_id\": 1,\n    \"permission_id\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loguear User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jorgefernandez1@gmail.com\",\n    \"password\": \"certina123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jorgefernandez1@gmail.com\",\n    \"role_id\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\": {\n        \"email\": \"jorgefernandez1@gmail.com\",\n        \"role_id\": 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mostrar todos los Users (admin y users)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/accounts/getAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"getAccounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "\"tbl_role_user\" -  Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/tables/createTblRoleUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"tables",
+								"createTblRoleUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"tbl_role_user\" - Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/tables/deleteTblRoleUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"tables",
+								"deleteTblRoleUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"tbl_roles\" - Crear y Añadir (roles predeterminados)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/tables/createTblRoles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"tables",
+								"createTblRoles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"tbl_roles\" - eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/tables/deleteTblRoles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"tables",
+								"deleteTblRoles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permissions",
+			"item": [
+				{
+					"name": "\"tbl_permission_role\" - Crear y Cargar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/tables/createTbPermissionRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"tables",
+								"createTbPermissionRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "\"tbl_permissions\" - Crear y Cargar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/tables/createTblPermissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"tables",
+								"createTblPermissions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Providers DDI Circuits",
+			"item": [
+				{
+					"name": "tables",
+					"item": [
+						{
+							"name": "\"tbl_providers\" - Crear",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/createTblProviders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"createTblProviders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_circuits\" - Crear",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/createTblcircuits",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"createTblcircuits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_ddis\" - Crear",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/createTblddis",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"createTblddis"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_providers\" - Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/deleteTblProviders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"deleteTblProviders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_circuits\" - Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/deleteTblCircuits",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"deleteTblCircuits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_ddis\" - Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/deleteTblddis",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"deleteTblddis"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_providers\" - Vaciar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/deleteAllProviders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"deleteAllProviders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_circuits\" - Vaciar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/deleteAllCircuits",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"deleteAllCircuits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "\"tbl_ddis\" - Vaciar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/tables/deleteAllddis",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"tables",
+										"deleteAllddis"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"providerName\": \"option1\",\n    \"providerActive\": true,\n    \"circuitName\": \"option1\",\n    \"circuitIdentifier\": \"123456\",\n    \"circuitHost\": \"127.0.0.1\",\n    \"circuitPort\": \"8080\",\n    \"circuitDescription\": \"this is circuit description 2 blah\",\n    \"circuitActive\": true,\n    \"DDI\": \"123456\",\n    \"associateDDI\": \"1234567\",\n    \"DDIActive\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/providers/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/providers/getProviders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"getProviders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role_id\": 0,\n    \"provider_id\": 1,\n    \"provider_name\": \"option2\",\n    \"provider_active\": 0,\n    \"ddi_id\": 1,\n    \"ddi_principal\": \"asdfasdf\",\n    \"ddi_associate\": \"asdfasdf\",\n    \"ddi_active\": 1,\n    \"circuit_id\": 1,\n    \"circuit_name\": \"option2\",\n    \"circuit_identifier\": \"asdfasdf\",\n    \"circuit_host\": \"asdfasdf\",\n    \"circuit_port\": \"asdfasdf\",\n    \"circuit_description\": \"asdfasdf\",\n    \"date_in\": \"2021-06-21T18:14:13.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/providers/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\": {\n        \"role_id\": 0,\n        \"provider_id\": 3\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/v1/providers/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"providers",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "helpers",
+			"item": [
+				{
+					"name": "Unixtimes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/times/getTimes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"times",
+								"getTimes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "testTimestamp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/v1/times/testTimestamp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"times",
+								"testTimestamp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

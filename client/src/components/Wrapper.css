@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 70px;
+  top: 60px;
+  width: 95%;
+  padding-left: 14px;
+  padding-right: 5px;
+  padding-top: 10px;
+  background-color: #f2f2f2;
+  height: 940px;
+}
+
+.wrapper > div {
+  width: 100%;
+}

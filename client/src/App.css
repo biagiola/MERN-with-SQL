@@ -1,0 +1,244 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 3px;
+  /* margin-right: 12px; */
+  width: 100%;
+  cursor: default;
+  /* box-shadow: 0 4px 6px 0 rgb(0 0 0 / 35%); */
+  /* margin-bottom: 13px; */
+}
+.box-title {
+  background-color: #ff0000;
+  /* padding: 5px 7px; */
+  color: rgb(19, 19, 19);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.box-input {
+  padding: 5px;
+}
+
+/* buttons */
+/* send */
+.btn {
+  padding: 5px 10px;
+  margin: 5px 3px;
+  /* color: #222;   */
+  color: rgb(232, 232, 232);  
+  border-radius: 2px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-primary, 
+.btn-secondary-orange,
+.btn-secondary-red,
+.btn-primary-orangered {
+  padding: 8px 27px;
+  margin: 5px;
+  color: #222;
+  cursor: pointer;
+  background-color: #dfdfdf;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-secondary-orange,
+.btn-secondary-red {
+  padding: 5px 27px;
+}
+.btn-primary:hover {
+  background-color: red;
+  color: #e1e1e1;
+  border: none;
+}
+.btn-primary-orangered:hover {
+  background-color: orangered;
+  color: #e1e1e1;
+  border: none;
+}
+
+.btn-secondary-orange {
+  background-color: rgb(226, 147, 0);
+  color: white;
+}
+.btn-secondary-red {
+  background-color: rgb(253, 45, 45);
+  color: white;
+}
+.btn-secondary-oragne:hover {
+  background-color: rgb(240, 161, 14)
+}
+.btn-secondary-red:hover {
+  background-color: rgb(252, 60, 60)
+}
+/* edit */
+.btn-edit {
+  display: flex;
+  background-color: rgb(226, 147, 0);
+}
+.btn-edit > svg {
+  position: relative;
+  top: 2px;
+}
+.btn-edit:hover {
+  background-color: rgb(240, 161, 14)
+}
+/* delete */
+.btn-delete {
+  display: flex;
+  background-color: rgb(253, 45, 45);
+}
+.btn-delete > svg {
+  position: relative;
+  top: 2px;
+}
+.btn-delete:hover {
+  background-color: rgb(252, 60, 60)
+}
+/* details */
+.btn-details {
+  display: flex;
+  background-color: rgb(32, 95, 255);
+}
+.btn-details > svg {
+  position: relative;
+  top: 2px;
+}
+.btn-details:hover {
+  background-color: rgb(65, 119, 255);
+}
+
+/* btn-description */
+.btn-description {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* scroll-y styles */
+ /* width */
+ ::-webkit-scrollbar {
+  width: 10px;
+  border: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(129, 131, 129);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
+
+/* * {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} */
+
+.wrapper-tabs {
+  width: 99%;
+}
+
+.bloc-tabs {
+  display: flex;
+}
+.tabs {
+  padding: 15px;
+  text-align: center;
+  width: 10%;
+  background: rgba(107, 107, 107, 0.075);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(185, 185, 185, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+.tabs:not(:last-child){
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.active-tabs  {
+  color: #414141;
+  background: #e9e9e9;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+.active-tabs:active {
+  /* background: rgb(255, 123, 0); */
+  background: rgb(255, 123, 0);
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: 5px;
+  background: rgb(255, 0, 0);
+}
+
+button {
+  border: none;
+}
+.content-tabs {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  
+  margin: 5px 0;
+}
+.content {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.content h2 {
+  padding: 0px 0 5px 0px;
+}
+.content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+.content p {
+  width: 100%;
+  height: 100%;
+}
+.active-content {
+  display: block;
+}
+
+/* form inputs */
+label {
+  display: block;
+}

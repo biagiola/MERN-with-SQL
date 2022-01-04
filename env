@@ -1,0 +1,5 @@
+PORT = 9000
+API_URL = /api/v1
+SECRET = d5r1c8gke8df // utilizado por el json web token
+TIEMPO_PRIMER_BLOQUEO = 10 // segundos
+TIEMPO_SEGUNDO_BLOQUEO = 15 // segundos

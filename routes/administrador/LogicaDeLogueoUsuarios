@@ -1,0 +1,61 @@
+si contraseña correcta:
+  si NO está bloqueado:
+    si ha caducado la contraseña (30 dias):
+      enviamos formulario de actualizacion
+    else 
+      'Bienvenido.'
+
+  si está bloqueado:
+    pasó el tiempo de espera:
+      desbloqueamos al usuario; bloqueado=0; intentos=0, esperarHasta=null
+
+    NO pasó el tiempo de espera:
+      'Usuario bloqueado. Intentelo más tarde'
+
+else contraseña incorrecta: 
+  si NO está bloqueado:
+    ha pasado el tiempo de espera:
+      1.2
+
+    No ha pasado el tiempo de espera:
+      'Intentelo más tarde.'
+    
+  si está bloqueado: 
+    1.3
+
+*********************************************
+
+definiciones: 
+  i: intentos
+  Δt: tiempo de espera leída de BD
+  Δt': tiempo de espera modificado a ser escrito en BD
+
+  DBblock: bloqueo (true-false) de la BD
+  Wblock: bloqueo modificado a ser escrito en BD
+        
+  1.2: (0 <= i < 5 || i = 6 || i = 8)
+    DBblock = 0
+    Δt > 0  si i > 5
+    Δt = 0  si i < 5
+
+    i < 5:
+      Wblock=0
+    else:
+      Wblock=1
+
+    Δt' = 0
+    i++
+
+  1.3: (i = 5 || i = 7 || i = 9)
+    Wblock=0
+
+    i = 5 => Δt' = 1 min
+
+    i = 7 => Δt' = 30 min
+    
+    i = 9 => Δt' = ∞
+
+    i++
+
+
+    

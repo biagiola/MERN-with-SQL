@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 1.2rem;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: #282828;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+
+.header-logo {
+  display: flex;
+  cursor: default;
+  margin-top: 5px;
+}
+
+.header-logo > div {
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.header-right >div{
+  display: flex;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.header-avatar {
+  cursor: pointer;
+  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.header-avatar div  {
+  -webkit-filter: drop-shadow(5px 5px 5px rgb(191, 191, 191));
+  filter:         drop-shadow(5px 5px 5px rgb(191, 191, 191)); 
+}
+
+/* .header-username {
+  display: flex;
+  cursor: pointer;
+} */
+
+.header-chevron-down {
+  cursor: pointer;
+}
+
+.header-menu-options,
+.header-menu-options-logout {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.header-menu-options-logout {
+  
+}
+
+/* MuiListItem-root 
+MuiMenuItem-root 
+MuiMenuItem-gutters 
+MuiListItem-gutters 
+MuiListItem-button */
+/* .header-menu-options-logout */
+/* .MuiMenuItem-root:last-of-type */ 
+.MuiListItem-root:last-of-type > svg  {
+  /* color: red !important; */
+}
+
+.MuiMenu-paper {
+  margin-top: 18px;
+}
+
+#header-modal {
+  top: 23px !important;
+}

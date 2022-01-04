@@ -1,0 +1,160 @@
+.provider-page {
+  padding: 5px;
+  padding-left: 0px;
+  height: 100%;
+  margin-top: 5px;
+}
+
+.provider-form-title {
+  padding-left: 8px;
+  color: #292929
+  /* display: flex;
+  justify-content: center; */
+}
+
+.select-colors {
+  display: flex;
+  margin-left: 10px;
+}
+.provider-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.provider-form-left {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* cards sections */
+.provider-section,
+.ddi-section,
+.circuit-section {
+  border: 1px solid #d9d9d9;
+  margin: 8px;
+  margin-left: 2px;
+  border-radius: 5px !important;
+  background-color: white;
+}
+
+.ddi-section {
+  margin-right: 0px;
+}
+/* titles */
+.provider-title,
+.circuit-title,
+.ddi-title {
+  background-color: rgb(226, 226, 226);
+  background-color: rgb(255, 175, 0);
+  color: #292929;
+  padding: 10px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.redBg {
+  background-color: rgb(255 47 47) !important;
+  color: #d9d9d9;
+}
+
+/* card section content */
+
+/* provider */
+.provider-section,
+.ddi-section {
+  width: 50%;
+}
+.circuit-section {
+  width: 100%;
+}
+
+.provider-inputs,
+.ddi-inputs,
+.circuit-inputs {
+  /* text-align: center; */
+  padding: 10px;
+}
+
+
+
+.ddi-inputs {
+  display: flex;
+}
+
+.ddi-inputs-right {
+  margin-left: 20%;
+}
+
+.fProviderName,
+.fProviderActive,
+
+/* inputs */
+#fDDI
+#fDDIAssociate
+#fCircuitIdentifier
+#fCircuitHost
+#fCircuitPort {
+  padding: 2px;
+  margin: 2px
+}
+
+.provider-input-chart {
+  border: 1px solid #b1b1b1;
+  border-radius: 3px;
+  padding: 4px;
+  margin-bottom: 15px;
+}
+.provider-input-chart:hover {
+  border-color:  #727272;
+  transition: all 0.2s ease-in-out;
+}
+
+.provider-input-label {
+  margin: 5px;
+  margin-top: 8px;
+}
+/* selects */
+#fProviderName,
+#fProviderActive,
+#fDDIActive,
+#fDDIActive,
+#fCircuitActive,
+#fCircuitDescription {
+  padding: 2px;
+  margin: 2px
+}
+
+.circuit-input-top {
+  display: flex;
+  /* justify-content: left; */
+  /* flex-direction: row; */
+}
+.circuit-inputs-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.circuit-inputs-right {
+  justify-content: center;
+  width: 50%;
+}
+
+/* ddis */
+.ddi-section {
+  width: 50%;
+}
+.ddi-intpus {
+  /* width: 50%; */
+}
+
+.btn-send-provider {
+  margin: 15px 10px;
+}
+
+/* textarea, label, input, select {
+  padding: 1px
+}
+textarea, label, input, select {
+  margin: 2px;
+} */

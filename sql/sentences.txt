@@ -1,0 +1,91 @@
+DROP TABLE tbl_users, tbl_role_user, tbl_roles, tbl_permission_role, tbl_permissions;
+
+select * from tbl_users;
+select * from tbl_role_user;
+select * from tbl_roles;
+select * from tbl_permission_role;
+select * from tbl_permissions;
+
+select * from tbl_providers;
+select * from tbl_ddis;
+select * from tbl_circuits;
+
+CREATE TABLE `tbl_users` (
+  `user_id` INT UNIQUE AUTO_INCREMENT PRIMARY KEY, 
+  `firstname` VARCHAR(255) NOT NULL, 
+  `lastname` VARCHAR(255) NOT NULL, 
+  `email` VARCHAR(255) NOT NULL UNIQUE, 
+  `password` VARCHAR(255) NOT NULL, 
+  `date_in` TIMESTAMP NOT NULL,
+  `role_id` INT NOT NULL,
+  `permission_id` INT NOT NULL,
+  `active` TINYINT(1) NOT NULL DEFAULT 0,
+  `blocked` TINYINT(1) NOT NULL DEFAULT 0,
+  `attempts` INT NOT NULL DEFAULT 0, 
+  `wait_until` BIGINT UNSIGNED,
+  `last_login` TIMESTAMP DEFAULT NULL,
+  `last_pass_changed` TIMESTAMP DEFAULT NULL,
+  `last_remember` TIMESTAMP DEFAULT NULL
+) ENGINE=InnoDB CHARSET=utf8;
+
+CREATE TABLE `tbl_role_user` (
+  `role_id` INT NOT NULL, 
+  `user_id` INT UNIQUE NOT NULL, 
+  FOREIGN KEY (user_id) REFERENCES `tbl_users` (user_id)
+) ENGINE=InnoDB CHARSET=utf8;
+
+CREATE TABLE `tbl_roles` (
+  `role_id` INT UNIQUE NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `slug` VARCHAR(255) NOT NULL,
+  `desc` VARCHAR(255)
+) ENGINE=InnoDB CHARSET=utf8;
+
+CREATE TABLE `tbl_permission_role` (
+  `permission_id` INT UNIQUE NOT NULL,
+  `role_id` INT NOT NULL,
+  FOREIGN KEY (role_id) REFERENCES `tbl_roles` (role_id)
+) ENGINE=InnoDB CHARSET=utf8;
+
+CREATE TABLE `tbl_permissions` (
+  `permissions_id` INT UNIQUE NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `slug` VARCHAR(255),
+  `desc` VARCHAR(255)
+) ENGINE=InnoDB CHARSET=utf8;
+
+*****************************
+
+CREATE TABLE `tbl_providers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `active` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARSET=utf8;
+
+CREATE TABLE `tbl_circuits` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_provider` int(10) unsigned NOT NULL COMMENT '//ID Proveedor',
+  `name` varchar(50) NOT NULL,
+  `identifier` varchar(150) DEFAULT NULL COMMENT '//Número de Circuito',
+  `host` varchar(50) DEFAULT NULL COMMENT '//IP-Dominio de Trunks asociados',
+  `port` varchar(50) DEFAULT NULL COMMENT '//SIP puerto asociado',
+  `date_in` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '//Fecha Alta',
+  `date_out` datetime DEFAULT NULL COMMENT '//Fecha Baja',
+  `description` text COMMENT '//Descripcion',
+  `active` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARSET=utf8;
+
+CREATE TABLE `tbl_ddis` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_provider` int(10) unsigned NOT NULL COMMENT '//id proveedor tblproviders',
+  `id_circuit` varchar(50) NOT NULL COMMENT '//Circuito en el que se provisiona',
+  `ddis` varchar(50) NOT NULL COMMENT '//Numeración',
+  `ddis_associated` varchar(50) DEFAULT NULL COMMENT '//Número asociado',
+  `date_in` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '//Fecha de alta de la numeración',
+  `date_out` datetime DEFAULT NULL COMMENT '//Fecha de baja de la numeración',
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_provider`) REFERENCES tbl_providers(`id`)
+) ENGINE=InnoDB CHARSET=utf8;

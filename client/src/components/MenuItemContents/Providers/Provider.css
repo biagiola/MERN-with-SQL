@@ -1,0 +1,345 @@
+/* Header */ 
+.wrapper-provider-mainHeader {
+  display: grid;
+  grid-template-columns:
+    repeat(1, 0.295fr)
+    repeat(1, 0.350fr)
+    repeat(1, 0.355fr);
+  grid-auto-rows: minmax(15px, auto);
+  grid-auto-columns: max-content(130px, 130px);
+  background-color: rgb(255 47 47);
+  font-size: 0.9rem;
+  text-align: center; 
+  /* padding: 6px; */
+  color: white;
+  border: 1px solid #dbdbdb;
+  border-top: none;
+  cursor: default;
+}
+
+.wrapper-provider-providerHeader ,
+.wrapper-provider-ddiHeader,
+.wrapper-provider-circuitHeader {
+  display: grid;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.wrapper-provider-providerHeader {
+  grid-template-columns: repeat(1, 3fr); 
+  /* border-right: 1px solid #dbdbdb; */
+  border-right: 1px solid #dbdbdb;
+}
+.wrapper-provider-ddiHeader {
+  grid-template-columns: repeat(1, 3fr); 
+  /* border-right: 1px solid #dbdbdb; */
+  border-right: 1px solid #dbdbdb;
+}
+.wrapper-provider-circuitHeader {
+  grid-template-columns: repeat(1, 3fr); 
+}
+
+/* Sub Headers */
+.wrapper-provider-subHeader {
+  display: grid;
+  grid-template-columns:
+    repeat(1, 0.295fr)
+    repeat(1, 0.350fr)
+    repeat(1, 0.355fr);
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  font-size: 0.9rem;
+  text-align: center; 
+  /* padding: 6px; */
+  border: 1px solid #dbdbdb;
+  border-top: none;
+  color: #333;
+  cursor: default;
+}
+
+.wrapper-provider-provider-subHeader,
+.wrapper-provider-ddi-subHeader,
+.wrapper-provider-circuit-subHeader {
+  display: grid;
+  padding: 6px 0;
+}
+
+.wrapper-provider-provider-subHeader {
+  grid-template-columns: repeat(3, 1fr);
+  border-right: 1px solid #dbdbdb;
+}
+.wrapper-provider-ddi-subHeader {
+  grid-template-columns: repeat(3, 2fr);
+  border-right: 1px solid #dbdbdb;
+}
+.wrapper-provider-circuit-subHeader {
+  grid-template-columns: repeat(5, 3fr);
+}
+
+/* content */
+.wrapper-provider-content {
+  display: grid;
+  grid-template-columns: 
+    repeat(1, 0.295fr) 
+    repeat(1, 0.3499fr) /* 0.350 genera un extra padding cuando hacemos zoom */
+    repeat(1, 0.355fr);
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.wrapper-provider-content:hover {
+  background-color: #e1e1e1;
+  transition: all 0.2s ease-in-out;
+}
+
+/* provider selected */
+.wrapper-provider-selected {
+  display: flex;
+  flex-direction: column;
+  color: rgb(51, 51, 51);
+  margin-left: 15px;
+}
+.provider-selected-btn-content {
+  display: flex;
+}
+.wrapper-provider-selected-data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.provider-selected-maintitle{
+  font-weight: 500;
+}
+.provider-selected-subtitle {
+  font-weight: 500;
+  padding-top: 8px;
+}
+.provider-selected,
+.ddi-selected,
+.circuit-selected {
+  padding: 5px;
+}
+.provider-selected > div,
+.ddi-selected > div,
+.circuit-selected > div {
+  padding: 4px;
+  padding-left: 2px;
+}
+.provider-selected-active > svg{
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
+.go-back-selected {
+  display: flex;
+  margin-top: 10px;
+}
+
+.wrapper-provider-providerContent,
+.wrapper-provider-ddiContent,
+.wrapper-provider-circuitContent {
+  display: grid;
+  padding: 8px 0;
+  border-right: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+.wrapper-provider-providerContent {
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid #dbdbdb;
+}
+.wrapper-provider-ddiContent {
+  grid-template-columns: repeat(3, 1fr);
+}
+.wrapper-provider-circuitContent {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.wrapper-provider:hover {
+  background-color: #f0f0f0;
+  transition: all 0.2s ease-in;
+}
+
+.wrapper-provider-mainHeader, .wrapper-provider-subHeader {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.wrapper-provider:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.wrapper-provider > span {
+  margin: 0px auto;
+  margin-top: 5px;
+}
+
+.wrapper-provider-mainHeader, .wrapper-list-subHeader {
+  border: 1px solid #dbdbdb;
+  font-weight: 500;
+  text-align: center; 
+}
+
+.btns-accions {
+  display: flex;
+  margin-top: 3px;
+}
+
+/* verticals dividers */
+
+
+/* header dahsboard user */
+.header-dashboard-user {
+  display: flex;
+  /* margin-top: 8px; */
+  margin-bottom: 8px;
+  margin-left: 5px;
+}
+/* plus icon to adde user */
+.plus-btn-add {
+  color: #333;
+  margin-top: 10px;
+  padding-left: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.plus-btn-add:hover {
+  color: orangered;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+}
+/* plus btn toolpit */
+.plus-btn-tooltip {
+  position: absolute;
+  font-size: 1rem;
+  /* left: 78px;
+  top: 60px; */
+  transform: translate(-50% , -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 120px;
+  background: #fff;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.header-dashboard-user > .plus-btn-add:hover > .plus-btn-tooltip{
+  transition: all 0.5s ease;
+  opacity: 1;
+  top: 50%;
+  top: 60px;
+  left: 65px;
+  color: #333;
+}
+
+/* search user */
+#search-user-input {
+  border: none;
+  padding: 8px;
+  margin-top: 8px;
+  margin-left: 10px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+}
+
+#search-user-input:hover {
+  border: 1px solid #756b6b;
+  transition: all 0.2s ease-in-out;
+}
+
+/* dashboard list */
+.dashboard-list {
+  padding: 5px
+}
+/* modal opener */
+.add-user-modal {
+  padding: 10px 15px;
+  background-color: #d81818;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* search user */
+.search-user {
+  display: flex;
+}
+.search-icon {
+  /* padding: 5px; */
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* modals */
+/* Add user */
+.add-admin-modal > div {
+  background-color: orangered;
+}
+/* Edit user */
+.edit-user-modal > div {
+  background-color: orange;
+}
+/* delete user */
+.delete-user-modal > div {
+  background-color: rgb(253, 51, 51);
+}
+
+/* downshift */
+.search-input-box {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+
+}
+.search-user-input + div {
+  position: relative;
+  z-index: 100;
+  left: 90px;
+  top: 40px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  background-color: white;
+  color: #353535;
+}
+
+/* add user modal */
+.add-user-input {
+  transition: all 0.2s ease-in;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  padding: 6px;
+}
+.add-user-input:hover {
+  border: 1px solid orangered;
+}
+.add-user-closebtn {
+  padding: 10px 10px 5px 5px;
+  color: white;
+  transition: all 0.2s ease-in;
+}
+.add-user-closebtn > svg { 
+  cursor: pointer;
+}
+.add-user-closebtn:hover {
+  color: #1d1d1d;
+}
+
+/* edit user modal */
+.edit-user-closebtn {
+  padding: 10px 10px 5px 5px;
+  color: white;
+  transition: all 0.2s ease-in;
+}
+.edit-user-closebtn > svg { 
+  cursor: pointer;
+}
+.edit-user-closebtn:hover {
+  color: #1d1d1d;
+}
